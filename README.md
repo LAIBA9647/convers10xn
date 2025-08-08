@@ -42,11 +42,11 @@ A high-conversion WordPress theme designed for business growth and lead generati
 ```
 conversion10x/
 ├── index.php
+├── index.html
 ├── header.php
 ├── footer.php
 ├── style.css
 ├── functions.php
-├── screenshot.png
 ├── README.md
 └── assets/
     ├── logo.png
