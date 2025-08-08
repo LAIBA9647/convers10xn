@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion10X WordPress Theme Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: #91D3FF;
+      min-height: 100vh;
+    }
+    
+    /* === HERO SECTION === */
+    .hero-bg {
+      background: #91D3FF;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-header {
+      background: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #222;
+    }
+    .hero-logo .ion {
+      color: #91D3FF;
+      background: #fff;
+      border-radius: 6px;
+      margin-left: 2px;
+      padding: 2px 6px;
+      border: 1px solid #e0e7ef;
+    }
+    .hero-nav {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 32px;
+      padding: 8px 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      align-items: center;
+      border: 1px solid #f0f0f0;
+    }
+    .hero-nav a {
+      color: #222;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+    .hero-nav a:hover {
+      color: #FF7A00;
+    }
+    .hero-icons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .hero-icon {
+      width: 28px;
+      height: 28px;
+      background: #f5f5f5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1rem;
+    }
+    .hero-icon svg {
+      width: 16px;
+      height: 16px;
+      color: #666;
+    }
+    .hero-icon.lang {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #222;
+      background: #f3f7fa;
+      border: 1px solid #e0e7ef;
+    }
+    .hero-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+    .hero-title .orange {
+      color: #FF7A00;
+    }
+    .hero-subtitle {
+      color: #222;
+      font-size: 1.15rem;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .hero-video-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .hero-video {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 48px 0 rgba(0,0,0,0.13), 0 0 0 8px #fff, 0 0 0 16px #FF7A00;
+      position: relative;
+      width: 540px;
+      height: 300px;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 72px;
+      height: 72px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+    .hero-play-btn svg {
+      width: 36px;
+      height: 36px;
+      display: block;
+    }
+    .hero-testimonial {
+      position: absolute;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+      padding: 18px 22px;
+      font-size: 1rem;
+      color: #222;
+      max-width: 270px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hero-testimonial-left {
+      left: -60px;
+      top: 120px;
+      transform: rotate(-12deg);
+    }
+    .hero-testimonial-right {
+      right: -60px;
+      top: 60px;
+      transform: rotate(8deg);
+    }
+    .hero-testimonial-bottom {
+      right: -300px;
+      top: 320px;
+      transform: rotate(-4deg);
+      max-width: 320px;
+    }
+    .hero-testimonial .stars {
+      color: #FFB800;
+      font-size: 1.1rem;
+    }
+    .hero-testimonial .avatar {
+      width: 36px; height: 36px; border-radius: 50%; object-fit: cover; margin-right: 10px; vertical-align: middle;
+    }
+    .hero-testimonial .author {
+      display: flex; align-items: center; gap: 8px; font-size: 0.98rem; font-weight: 500;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes starPop {
+      to { opacity: 1; transform: scale(1);}
+    }
+    .hero-features-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .hero-feature-btn {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-size: 1rem;
+      font-weight: 500;
+      color: #222;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+      justify-content: center;
+    }
+    .hero-feature-btn svg {
+      width: 28px; height: 28px;
+      color: #91D3FF;
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .hero-cta-btn {
+      background: #222;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    }
+    .hero-cta-btn .cta-icon {
+      width: 22px; height: 22px; color: #FF7A00;
+    }
+    .hero-rating {
+      color: #222;
+      font-size: 1rem;
+      margin-top: 4px;
+    }
+    .hero-rating b { font-weight: 700; }
+    .hero-rating .trustpilot {
+      color: #1BAF5D;
+      font-weight: 700;
+      margin-left: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .hero-rating .trustpilot svg {
+      width: 18px; height: 18px; vertical-align: middle;
+    }
+    .hero-partners {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+      opacity: 0.8;
+      flex-wrap: nowrap;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .hero-partners img, .hero-partners svg {
+      height: 38px;
+      width: auto;
+      filter: grayscale(1) brightness(1.3);
+      opacity: 0.9;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .hero-partners img[alt="Zwischen"] {
+      height: 42px;
+    }
+    .hero-partners img[alt="cFundedTrader"] {
+      height: 38px;
+    }
+    .hero-partners img[alt="TCR"] {
+      height: 40px;
+    }
+    .hero-partners img[alt="rieker"] {
+      height: 36px;
+    }
+    .hero-partners img[alt="PWR INDOVA"] {
+      height: 44px;
+    }
+    
+    /* === 10X FEATURE SECTION === */
+    .tenx-features-section {
+      background: #fff;
+      padding: 60px 0 40px 0;
+      position: relative;
+    }
+    .tenx-features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      position: relative;
+      padding: 0 40px;
+    }
+    .tenx-feature-row {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      background: transparent;
+      min-height: 280px;
+      margin-bottom: 32px;
+    }
+    .tenx-feature-img {
+      flex: 0 0 600px;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+    }
+    .tenx-feature-img img {
+      width: 600px;
+      max-width: 90vw;
+      margin-top: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      transform: rotate(15deg);
+    }
+    .tenx-feature-content {
+      flex: 1;
+      margin-left: 60px;
+      z-index: 2;
+      background: transparent;
+      position: relative;
+    }
+    .tenx-feature-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      background: #91D3FF;
+      display: inline-block;
+      padding: 4px 18px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+    .tenx-feature-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #222;
+      margin: 0 0 20px 0;
+      line-height: 1.3;
+    }
+    .tenx-feature-content p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      max-width: 600px;
+    }
+    .tenx-feature-content ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .tenx-feature-content ul li {
+      color: #222;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 25px;
+      line-height: 1.5;
+    }
+    .tenx-feature-content ul li:before {
+      content: '✓';
+      color: #FF7A00;
+      font-size: 1.3em;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .tenx-feature-content ul li strong {
+      color: #222;
+      font-weight: 700;
+    }
+    .tenx-feature-items {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .tenx-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+    .tenx-feature-icon {
+      width: 28px;
+      height: 28px;
+      background: #FF7A00;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tenx-feature-text h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #222;
+      margin: 0 0 8px 0;
+    }
+    .tenx-feature-text p {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .tenx-watermark {
+      position: absolute;
+      right: 5%;
+      top: 30%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .tenx-watermark img {
+      width: 200px;
+      height: auto;
+      opacity: 0.13;
+    }
+    .tenx-watermark-text {
+      position: absolute;
+      right: 5%;
+      top: 30%;
+      font-size: 8rem;
+      color: #91D3FF;
+      opacity: 0.13;
+      font-weight: 900;
+      line-height: 1;
+      user-select: none;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1100px) {
+      .hero-header, .hero-main { max-width: 98vw; }
+    }
+    @media (max-width: 900px) {
+      .hero-header { flex-direction: column; gap: 18px; }
+      .hero-nav { padding: 8px 12px; gap: 18px; }
+      .hero-main { padding: 0 8px; }
+      .hero-video { width: 98vw; max-width: 98vw; height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.3rem; }
+      .hero-header { padding: 12px 4px 0 4px; }
+      .hero-nav { font-size: 0.95rem; }
+      .hero-video { height: 140px; }
+      .hero-feature-btn { min-width: 120px; font-size: 0.95rem; padding: 10px 8px; }
+      .hero-partners { gap: 12px; }
+    }
+    @media (max-width: 1000px) {
+      .tenx-features-container { max-width: 98vw; }
+      .tenx-feature-img img { width: 220px; }
+      .tenx-feature-img { flex-basis: 220px; }
+    }
+    @media (max-width: 700px) {
+      .tenx-feature-row { flex-direction: column; align-items: center; }
+      .tenx-feature-content { margin-left: 0; margin-top: 18px; }
+      .tenx-watermark { font-size: 3.5rem; right: 2%; top: 60%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero-bg">
+    <div class="hero-header">
+      <div class="hero-logo">
+        <img src="assets/logo.png" alt="Conversion10X Logo" style="height: 40px; width: auto;">
+      </div>
+      <nav class="hero-nav">
+          <a href="#">Why 10X</a>
+          <a href="#">Our Story</a>
+          <a href="#">Solutions</a>
+          <a href="#">Success Stories</a>
+          <a href="#">FAQs</a>
+        </nav>
+      <div class="hero-icons">
+        <span class="hero-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7.5 7.5 0 0 1 13 0"/></svg></span>
+        <span class="hero-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4"/><path d="M8 3v4"/></svg></span>
+        <span class="hero-icon lang">DE</span>
+      </div>
+    </div>
+    <div class="hero-main">
+      <div class="hero-title">Can You Handle <span class="orange">10X</span> Growth?</div>
+      <div class="hero-subtitle">Discover the Secret Behind Market Leaders. Our Exclusive 10X Accelerator™ Method.</div>
+      <div class="hero-video-wrap">
+        <div class="hero-video">
+          <img src="assets/office-video-watermark.png" alt="Office Video">
+          <span class="hero-play-btn">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#fff" opacity="0.7"/><circle cx="32" cy="32" r="28" fill="none" stroke="#FF7A00" stroke-width="2"/><polygon points="28,22 46,32 28,42" fill="#FF7A00"/></svg>
+          </span>
+        </div>
+        </div>
+      
+      <!-- Floating Testimonials -->
+      <div class="hero-testimonial hero-testimonial-left">
+        <div>"We are routinely enabled to outrun the clock. Communication is always thorough, super-valuable and clearly on-time. Thank you!"</div>
+        <div class="stars">★★★★★</div>
+        <div class="author"><img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar"> Alex Menace</div>
+        </div>
+      
+      <div class="hero-testimonial hero-testimonial-right">
+        <div>"Excellent work from Conversion10X and the team. Always on point, always on time. Highly recommended."</div>
+        <div class="stars">★★★★★</div>
+        <div class="author"><img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Avatar"> Natalie Miller</div>
+      </div>
+      
+      <div class="hero-testimonial hero-testimonial-bottom">
+        <div>The project was implemented precisely, straightforward, and finally, on a new level. You and clearly states: "This makes it effective." Top! Thanks!</div>
+        <div class="stars">★★★★★</div>
+        <div class="author"><svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#eee"/><text x="50%" y="55%" text-anchor="middle" fill="#222" font-size="18" font-family="Arial" dy=".3em">T</text></svg> Tobias Rettig</div>
+      </div>
+      <div class="hero-features-row">
+        <div class="hero-feature-btn"><svg viewBox="0 0 32 32"><rect x="6" y="14" width="20" height="4" rx="2" fill="#91D3FF"/></svg>Book A 30-Minute No-Obligation Consultation</div>
+        <div class="hero-feature-btn"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="#91D3FF"/></svg>Receive Your Bespoke 10X Accelerator™ Blueprint</div>
+        <div class="hero-feature-btn"><svg viewBox="0 0 32 32"><polygon points="16,6 28,26 4,26" fill="#91D3FF"/></svg>Achieve Market Dominance Through Systematic Execution</div>
+    </div>
+      <div class="hero-cta-row">
+        <button class="hero-cta-btn">Free Strategy Call <svg class="cta-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#FF7A00"/><polygon points="10,8 17,12 10,16" fill="#fff"/></svg></button>
+        <div class="hero-rating">Excellent <b>4.8 out of 5</b> <span class="trustpilot"><svg viewBox="0 0 24 24"><polygon points="12,2 15,10 24,10 17,15 19,23 12,18 5,23 7,15 0,10 9,10" fill="#1BAF5D"/></svg>Trustpilot</span></div>
+    </div>
+      <div class="hero-partners">
+        <img src="assets/Zwischen.png" alt="Zwischen">
+        <img src="assets/Cfunded.png" alt="cFundedTrader">
+        <img src="assets/TCR.png" alt="TCR">
+        <img src="assets/Reiker.png" alt="rieker">
+        <img src="assets/PWR.png" alt="PWR INDOVA">
+        </div>
+        </div>
+      </div>
+
+  <!-- 10X Feature Section -->
+  <section class="tenx-features-section">
+    <div class="tenx-features-container">
+      <div class="tenx-feature-row">
+        <div class="tenx-feature-img">
+          <img src="assets/laptop.png" alt="Laptop">
+        </div>
+        <div class="tenx-feature-content">
+          <div class="tenx-feature-label">Think a Standard Redesign Will Solve Your Growth Issues?</div>
+          <h3>Why Looks Alone Won't Win High-Stakes Deals</h3>
+          <p>Most firms believe that a visually appealing website alone can attract premium clients. In high-value markets, credibility and proven expertise matter. Here, effective messaging drives decisions. A site that is just 'pretty' doesn't meet the mark. Without deep strategic alignment, you'll struggle to secure top-tier contracts or attract the best talent.</p>
+          <div class="tenx-feature-items">
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Surface-Level Branding Fails to Build Trust</h4>
+                <p>Most firms focus on visual appeal without building credibility</p>
+              </div>
+            </div>
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Missed Opportunities on High-Value Tender</h4>
+                <p>Without strategic positioning, you lose critical business opportunities</p>
+              </div>
+            </div>
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Lack of Strategic Positioning Repels Elite Talent</h4>
+                <p>Top professionals seek firms with strong market authority</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tenx-watermark">
+          <img src="assets/watermark.png" alt="10X Watermark">
+        </div>
+        <div class="tenx-watermark-text">10</div>
+        </div>
+      
+      <div class="tenx-feature-row">
+        <div class="tenx-feature-img">
+          <img src="assets/laptop.png" alt="Laptop">
+        </div>
+        <div class="tenx-feature-content">
+          <div class="tenx-feature-label">Close the Gap—Own Your Market</div>
+          <h3>We Engineer Authority, Not Just Eye-Catching Pages</h3>
+          <p>In competitive fields like finance, law, engineering, and consulting, big deals rely on perceived expertise and actual value. With our 10X Accelerator™, we unite brand strategy, market insights, and design focused on conversions. This way, every page shows strong credibility. This is more than just a cosmetic upgrade. It's about building a strong online presence that attracts top decision-makers.</p>
+          <div class="tenx-feature-items">
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Data-Backed Brand Positioning</h4>
+                <p>We align your messaging with the exact triggers that top clients care about</p>
+        </div>
+      </div>
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Tender Optimization & Proof Elements</h4>
+                <p>We embed trust factors that move you to the front of the bidding process.</p>
+      </div>
+    </div>
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Strategic Employer Branding</h4>
+                <p>We craft a compelling narrative that draws in top-tier professionals who elevate your firm.</p>
+    </div>
+        </div>
+        </div>
+      </div>
+        <div class="tenx-watermark">
+          <img src="assets/watermark.png" alt="10X Watermark">
+      </div>
+      <div class="tenx-watermark-text">10</div>
+    </div>
+      
+      <div class="tenx-feature-row">
+        <div class="tenx-feature-img">
+          <img src="assets/laptop.png" alt="Laptop">
+        </div>
+        <div class="tenx-feature-content">
+          <div class="tenx-feature-label">Close the Gap—Own Your Market</div>
+          <h3>Rewrite Your Growth Trajectory with 10X Execution</h3>
+          <p>Stop investing in half measures. Our proven 10X Accelerator™ remodels your entire digital ecosystem—infusing high-level trust cues, compelling brand storytelling, and strategic calls to action that drive high-value contracts. The result? An unstoppable market presence that attracts premium leads, wins critical tenders, and brings on the top talent you need to scale.</p>
+          <div class="tenx-feature-items">
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Demonstrable ROI & Bigger Wins</h4>
+                <p>Seven-figure contracts become achievable outcomes, not pipe dreams.</p>
+    </div>
+        </div>
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Sustained Market Recognition</h4>
+                <p>Position your firm as the undisputed go-to authority in your sector.</p>
+        </div>
+      </div>
+            <div class="tenx-feature-item">
+              <div class="tenx-feature-icon">✓</div>
+              <div class="tenx-feature-text">
+                <h4>Future-Proof Talent Pipeline</h4>
+                <p>Elevate your employer brand to secure and retain world-class professionals.</p>
+        </div>
+        </div>
+      </div>
+        </div>
+        <div class="tenx-watermark">
+          <img src="assets/watermark.png" alt="10X Watermark">
+        </div>
+        <div class="tenx-watermark-text">10</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
